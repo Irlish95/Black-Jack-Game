@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+class Card{
+protected:
+    enum Suit{
+        HEARTS,
+        DIAMONDS,
+        SPADES,
+        CLUBS,
+    };
+
+    bool cardPosition;
+public:
+    enum cardValue{
+        TWO = 2,
+        THREE = 3,
+        SIX = 6,
+        SEVEN = 7,
+        EIGHT = 8,
+        NINE = 9,
+        TEN = 10,
+        JACK = 10,
+        QUEEN = 10,
+        KING = 10,
+        ACE = 1,
+    };
+    //Card(int i){ }
+    Card(){}
+
+    bool Flip(bool cardPosition){
+
+        bool h;
+        h = cardPosition^1;
+        return h;
+    }
+    int getValue(cardValue value){
+        return (cardValue)value;
+    }
+
+};
+
+int main()
+{
+    Card card;
+    cout<<card.Flip(1)<<endl;
+    Card value;
+    Card::cardValue i;
+    i = card.ACE;
+    cout<<value.getValue(i)<<endl;
+    
+    return 0;
+}
